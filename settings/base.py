@@ -15,6 +15,7 @@ DOMAIN = 'My_project.herokuapp.com'
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
+THUMBNAIL_DEBUG = True
 
 EMAIL_HOST = ''
 EMAIL_PORT = 587
@@ -101,6 +102,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.core.context_processors.request',
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
 )
 
 # User settings
@@ -108,11 +111,15 @@ AUTH_USER_MODEL = 'profiles.User'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
+
 )
 
 LOGIN_URL = '/login/'
 LOGOUT_URL = '/logout/'
 LOGIN_REDIRECT_URL = '/profile/'
+
+SOCIAL_AUTH_RAISE_EXCEPTIONS = True
+RAISE_EXCEPTIONS = True
 
 LOG_FILE = rel('logs', 'app.log')
 

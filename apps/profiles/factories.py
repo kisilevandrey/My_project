@@ -5,6 +5,7 @@ from .models import User
 from django.contrib.webdesign import lorem_ipsum
 
 
+
 class UserFactory(factory.DjangoModelFactory):
     FACTORY_FOR = User
 
@@ -36,3 +37,5 @@ class AdminFactory(UserFactory):
     is_staff = True
     is_active = True
     is_superuser = True
+
+

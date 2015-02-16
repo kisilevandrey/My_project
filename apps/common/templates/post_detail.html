@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% block content %}
+    {% for post in object_list %}
+    <div class="row">
+        <div class="row">
+            <div class="col-md-12">
+            {% thumbnail post.image "400x400" crop="center" as im %}
+                <a href="{% url 'posts:detail' pk=post.pk %}"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
+            {% endthumbnail %}

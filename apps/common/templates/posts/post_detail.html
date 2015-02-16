@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% block content %}
+	{% thumbnail post.image "400x400" crop="center" as im %}
+               <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                
+            {% endthumbnail %}
+			</div>
+        <div class="row">
+            <div class="col-md-12">
+                Likes: {{ post.liked_users.count }}
+		    </div>
+		    
+             <br>
+             </div>
+             <div class="col-md-12">
+				Comments: {{ post.comments.count }}
+		    </div>
+             <br>
+             </div>
+            <div class="col-md-12">
+				Comments: {{ post.comments.all }}
+		    </div>
+				
+
+{% endblock content %}

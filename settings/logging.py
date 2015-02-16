@@ -22,7 +22,7 @@ LOGGING = {
         'null': {
             'level': 'DEBUG',
             'class': 'django.utils.log.NullHandler',
-        },
+                    },
         'console': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',

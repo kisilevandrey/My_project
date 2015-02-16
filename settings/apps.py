@@ -12,7 +12,8 @@ THIRD_PARTY_APPS = (
     'gunicorn',
     'spurl',
     'django_extensions',
-    'sorl.thumbnail'
+    'sorl.thumbnail',
+    'social.apps.django_app.default',
 )
 
 PROJECT_APPS = (
